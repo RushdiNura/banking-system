@@ -4,7 +4,7 @@
   "description": "Production-ready banking management system backend",
   "main": "server.js",
   "scripts": {
-    "start": "node --env-file=.env server.js",
+     "start": "node server.js",
     "dev": "nodemon --env-file=.env server.js",
     "seed": "node --env-file=.env seeders/seed.js",
     "test": "jest --detectOpenHandles",

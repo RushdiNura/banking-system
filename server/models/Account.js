@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+﻿import mongoose from "mongoose";
 
 const accountSchema = new mongoose.Schema(
   {
@@ -104,7 +104,6 @@ const accountSchema = new mongoose.Schema(
 
 // Indexes
 accountSchema.index({ userId: 1 });
-accountSchema.index({ accountNumber: 1 }, { unique: true });
 accountSchema.index({ accountType: 1 });
 accountSchema.index({ status: 1 });
 accountSchema.index({ balance: 1 });

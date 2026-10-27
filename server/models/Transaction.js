@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+﻿import mongoose from "mongoose";
 import crypto from "crypto";
 
 const transactionSchema = new mongoose.Schema(
@@ -135,7 +135,6 @@ const transactionSchema = new mongoose.Schema(
 );
 
 // Indexes for better query performance
-transactionSchema.index({ transactionId: 1 }, { unique: true });
 transactionSchema.index({ fromAccount: 1 });
 transactionSchema.index({ toAccount: 1 });
 transactionSchema.index({ type: 1 });
@@ -143,9 +142,7 @@ transactionSchema.index({ status: 1 });
 transactionSchema.index({ createdAt: -1 });
 transactionSchema.index({ fromAccountNumber: 1 });
 transactionSchema.index({ toAccountNumber: 1 });
-transactionSchema.index({ referenceNumber: 1 });
-
-// Generate unique transaction ID
+// // Generate unique transaction ID
 transactionSchema.statics.generateTransactionId = function () {
   const timestamp = Date.now().toString();
   const random = crypto.randomBytes(4).toString("hex").toUpperCase();

@@ -166,9 +166,9 @@ const connectDB = async () => {
       family: 4,
     });
     logger.info(`MongoDB Connected: ${conn.connection.host}`);
-    if (process.env.NODE_ENV === "production") {
-      await conn.syncIndexes();
-    }
+    // if (process.env.NODE_ENV === "production") {
+    //   await conn.syncIndexes();
+    // }
   } catch (error) {
     console.error("[MONGO] Connection failed:", error.message);
     logger.error(`MongoDB connection error: ${error.message}`);

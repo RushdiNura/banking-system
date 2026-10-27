@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+﻿import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
@@ -40,7 +40,7 @@ const userSchema = new mongoose.Schema(
           message: "Please enter a valid email address",
         },
         {
-          // Async validator — only checks uniqueness when the email CHANGED
+          // Async validator â€” only checks uniqueness when the email CHANGED
           async validator(email) {
             // If email wasn't modified, skip the check (user is just updating other fields)
             if (!this.isModified("email")) return true;
@@ -199,7 +199,6 @@ const userSchema = new mongoose.Schema(
 );
 
 // Indexes for better query performance
-userSchema.index({ email: 1 }, { unique: true });
 userSchema.index({ phone: 1 });
 userSchema.index({ role: 1 });
 userSchema.index({ isActive: 1 });

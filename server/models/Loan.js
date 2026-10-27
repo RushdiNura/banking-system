@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+﻿import mongoose from "mongoose";
 
 const loanSchema = new mongoose.Schema(
   {
@@ -174,7 +174,7 @@ loanSchema.pre("save", function () {
       this.isModified("interestRate") ||
       this.isModified("termMonths")
     ) {
-      // Use `this.constructor` — guaranteed to be the Loan model at hook execution time
+      // Use `this.constructor` â€” guaranteed to be the Loan model at hook execution time
       this.emiAmount = this.constructor.calculateEMI(
         this.amount,
         this.interestRate,
